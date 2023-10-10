@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/AR_CMS/.vs/RaceDay_MyNamCycling/v16
+/AR_CMS/bin/Debug/net5.0
+/AR_CMS/obj
+/AR_CMS/appsettings.json
+/AR_CMS/appsettings.Development.json
+
+/AR_CMS/bin/Debug/net6.0
+/AR_CMS/obj
+/AR_CMS/wwwroot/uploads
+/AR_CMS/.vs
