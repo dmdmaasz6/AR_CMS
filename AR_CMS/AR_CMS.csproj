@@ -1,29 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.32" />
-    <PackageReference Include="Piranha" Version="10.3.0" />
-	<PackageReference Include="Piranha.AspNetCore" Version="10.3.0" />
-	<PackageReference Include="Piranha.AspNetCore.Identity.MySQL" Version="10.3.0" />
-	<PackageReference Include="Piranha.Azure.BlobStorage" Version="10.3.0" />
-    <PackageReference Include="Piranha.AttributeBuilder" Version="10.3.0" />
-    <PackageReference Include="Piranha.Data.EF.MySql" Version="10.3.0" />
-    <PackageReference Include="Piranha.Data.EF.SQLite" Version="10.3.0" />
-    <PackageReference Include="Piranha.ImageSharp" Version="10.3.0" />
-    <PackageReference Include="Piranha.Local.FileStorage" Version="10.3.0" />
+    <PackageReference Include="MySql.Data" Version="9.0.0" />
+    <PackageReference Include="Piranha" Version="11.1.0" />
+	<PackageReference Include="Piranha.AspNetCore" Version="11.1.0" />
+	<PackageReference Include="Piranha.AspNetCore.Identity.MySQL" Version="11.1.0" />
+	<PackageReference Include="Piranha.AspNetCore.Identity.PostgreSql" Version="11.1.0" />
+	  <PackageReference Include="Piranha.Data.EF.PostgreSql" Version="11.1.0" />
+	<PackageReference Include="Piranha.Azure.BlobStorage" Version="11.1.0" />
+    <PackageReference Include="Piranha.AttributeBuilder" Version="11.1.0" />
+    <PackageReference Include="Piranha.Data.EF.MySql" Version="11.1.0" />
+    <PackageReference Include="Piranha.Data.EF.SQLite" Version="11.1.0" />
+    <PackageReference Include="Piranha.ImageSharp" Version="11.1.0" />
+    <PackageReference Include="Piranha.Local.FileStorage" Version="11.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="10.3.0" />
-    <PackageReference Include="Piranha.Manager" Version="10.3.0" />
-	  <PackageReference Include="Piranha.Manager.LocalAuth" Version="10.3.0" />
-    <PackageReference Include="Piranha.Manager.TinyMCE" Version="10.3.0" />
+    <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="11.1.0" />
+    <PackageReference Include="Piranha.Manager" Version="11.1.0" />
+	  <PackageReference Include="Piranha.Manager.LocalAuth" Version="11.1.0" />
+    <PackageReference Include="Piranha.Manager.TinyMCE" Version="11.1.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 

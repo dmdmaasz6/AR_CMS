@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Piranha;
+using Piranha.AspNetCore.Identity.PostgreSQL;
 using Piranha.AttributeBuilder;
+using Piranha.Data.EF.PostgreSql;
 using Piranha.Manager.Editor;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,12 +43,14 @@ builder.AddPiranha(options =>
     options.UseMemoryCache();
 
     var connectionString = builder.Configuration.GetConnectionString("piranha");
-    options.UseEF<Piranha.Data.EF.MySql.MySqlDb>(o =>
-    {
-        o.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-    });
+    //options.UseEF<Piranha.Data.EF.MySql.MySqlDb>(o =>
+    //{
+    //    o.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+    //});
 
-    options.UseIdentityWithSeed<Piranha.AspNetCore.Identity.MySQL.IdentityMySQLDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    //options.UseIdentityWithSeed<Piranha.AspNetCore.Identity.MySQL.IdentityMySQLDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseEF<PostgreSqlDb>(db => db.UseNpgsql(connectionString));
+    options.UseIdentityWithSeed<IdentityPostgreSQLDb>(db => db.UseNpgsql(connectionString));
 
     /**
      * Here you can configure the different permissions
@@ -75,6 +79,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 app.UsePiranha(options =>
 {
